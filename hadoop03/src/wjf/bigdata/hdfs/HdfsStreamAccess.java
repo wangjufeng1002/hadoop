@@ -1,6 +1,5 @@
-package main.java.wjf.bigdata.hdfs;
+package wjf.bigdata.hdfs;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
@@ -59,7 +58,7 @@ public class HdfsStreamAccess {
 
     @Test
     public void testCat() throws IOException {
-        FSDataInputStream inputStream = fs.open(new Path("/angelababy.love"));
+        FSDataInputStream inputStream = fs.open(new Path("/flowsum/output/part-r-00000"));
 
         IOUtils.copy(inputStream, System.out);
     }
