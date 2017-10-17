@@ -12,12 +12,18 @@ import java.io.IOException;
  * @Description:
  * @Date:Create in 19:03 2017-10-16
  */
-public class FlowBean implements Writable {
+public class FlowBean implements Writable, WritableComparable<FlowBean> {
     private long upFlow;
     private long dFlow;
     private long sumFlow;
 
     public FlowBean(long upFlow, long dFlow) {
+        this.upFlow = upFlow;
+        this.dFlow = dFlow;
+        this.sumFlow = upFlow + dFlow;
+    }
+
+    public void set(long upFlow, long dFlow) {
         this.upFlow = upFlow;
         this.dFlow = dFlow;
         this.sumFlow = upFlow + dFlow;
@@ -82,5 +88,10 @@ public class FlowBean implements Writable {
     @Override
     public String toString() {
         return upFlow + "\t" + dFlow + "\t" + sumFlow;
+    }
+
+    @Override
+    public int compareTo(FlowBean o) {
+        return this.sumFlow > o.getSumFlow() ? 1 : -1;
     }
 }
