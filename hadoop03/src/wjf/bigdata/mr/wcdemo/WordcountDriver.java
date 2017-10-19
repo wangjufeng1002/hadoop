@@ -20,8 +20,10 @@ import java.io.IOException;
 public class WordcountDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
+        //要想运行为集群模式，一下三个参数要设置集群上的值
         conf.set("mapreduce.framework.name", "yarn");
         conf.set("yarn.resoucemanage.hostname", "server02");
+        conf.set("fs.defaultFS","hdfs://server02:9000/");
         Job job = Job.getInstance();
         //指定本程序jar包所在的路径
         job.setJarByClass(WordcountDriver.class);

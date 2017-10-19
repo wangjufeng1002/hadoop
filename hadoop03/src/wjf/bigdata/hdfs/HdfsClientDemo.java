@@ -71,4 +71,11 @@ public class HdfsClientDemo {
         }
     }
 
+    @Test
+    public void testDownLoad() throws IOException {
+        fs.copyToLocalFile(new Path("/join/input/order.txt"), new Path("H://order.txt"));
+        fs.copyToLocalFile(new Path("/join/input/product.txt"), new Path("H://product.txt"));
+
+    }
+
 }

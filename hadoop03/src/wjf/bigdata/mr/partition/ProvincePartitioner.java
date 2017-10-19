@@ -1,7 +1,6 @@
 package wjf.bigdata.mr.partition;
 
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.JobConf;
 import org.apache.hadoop.mapreduce.Partitioner;
 
 import java.util.HashMap;
