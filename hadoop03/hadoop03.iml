@@ -21,5 +21,14 @@
         <jarDirectory url="file://H:/hadoop-2.8.0-jar" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/lib/mysql-connector-java-5.1.14-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
