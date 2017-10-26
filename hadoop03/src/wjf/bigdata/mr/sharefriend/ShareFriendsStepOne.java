@@ -29,11 +29,8 @@ public class ShareFriendsStepOne {
     }
 
     static class ShareFriendsStepOneReducer extends Reducer<Text, Text, Text, Text> {
-
-
         @Override
         protected void reduce(Text friend, Iterable<Text> persons, Context context) throws IOException, InterruptedException {
-            Text[] texts = (Text[]) IteratorUtils.toArray(persons.iterator());
             StringBuffer sb = new StringBuffer();
             for (Text person : persons) {
                 sb.append(person).append(",");
